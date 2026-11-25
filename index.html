@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3eb">
+  <meta name="description" content="从 40 个日常选择里，找出与你性情相近的中国历史人物。">
+  <title>测测你的灵魂对应哪位中国历史人物</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site">
+    <header class="site-header wrap">
+      <button class="brand" type="button" id="brand" aria-label="灵魂人物志，返回首页">
+        <span class="brand-mark" aria-hidden="true">山</span>
+        <span>灵魂人物志</span>
+      </button>
+      <button class="text-button about-button" type="button" id="about-open">关于测试</button>
+    </header>
+
+    <main class="wrap">
+      <section class="home enter" id="home" aria-labelledby="home-title">
+        <div class="home-copy">
+          <p class="eyebrow">趣味人格测试</p>
+          <h1 id="home-title" tabindex="-1">测测你的灵魂<br>对应哪位<br><em>中国历史人物</em><span class="title-stop" aria-hidden="true">？</span></h1>
+          <p class="intro">如果把你的日常写成一卷人物小传，谁会是那个与你最有几分相像的人？</p>
+          <button class="button primary start-button" type="button" id="start">开始测试</button>
+          <div class="test-facts" aria-label="测试规格">
+            <span>40 道单选</span><span>约 5–8 分钟</span><span>8 种人物结果</span>
+          </div>
+        </div>
+        <figure class="hero-art">
+          <div class="art-mount">
+            <img class="art-image" id="landscape" src="landscape.webp" width="880" height="1100" alt="朱红日轮下的水墨群山和立于崖边的行人" decoding="async">
+            <span class="art-border" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </section>
+
+      <section class="quiz" id="quiz" aria-labelledby="question-title" hidden>
+        <div class="progress-area">
+          <div class="progress-caption">
+            <span class="topic" id="topic"></span>
+            <span class="progress-text" id="progress-text"></span>
+          </div>
+          <progress id="progress" aria-label="答题进度" max="40" value="0"></progress>
+        </div>
+        <div class="question-card" id="question-card">
+          <p class="question-count" id="question-count"></p>
+          <h1 id="question-title" tabindex="-1"></h1>
+          <fieldset class="options" id="options" aria-labelledby="question-title"></fieldset>
+        </div>
+        <div class="quiz-actions">
+          <button class="button secondary" id="previous" type="button">上一题</button>
+          <button class="button primary" id="next" type="button" disabled>下一题</button>
+        </div>
+      </section>
+
+      <section class="result" id="result" aria-labelledby="result-title" hidden>
+        <article class="share-card" id="share-card" aria-label="可截图分享的人物卡">
+          <div class="share-frame">
+            <header class="share-head"><span>灵魂人物志</span><span>我的测试结果</span></header>
+            <div class="poster-body">
+              <p class="poster-label">我的灵魂对应</p>
+              <h1 id="result-title" tabindex="-1"></h1>
+              <p class="poster-role" id="result-role"></p>
+              <span class="result-seal" id="result-seal" aria-hidden="true"></span>
+            </div>
+            <p class="poster-quote" id="result-quote"></p>
+            <ul class="tag-list" id="poster-tags" aria-label="人物特质"></ul>
+            <div class="poster-landscape" aria-hidden="true"></div>
+            <footer class="share-foot"><span>测测你的灵魂对应哪位中国历史人物</span></footer>
+          </div>
+        </article>
+        <div class="result-details">
+          <p class="eyebrow">人物解读</p>
+          <h2>你们有哪些相似之处？</h2>
+          <dl class="reading">
+            <div><dt>性格特点</dt><dd><ul class="tag-list" id="result-tags"></ul></dd></div>
+            <div><dt>匹配理由</dt><dd id="result-reason"></dd></div>
+            <div><dt>隐藏优势</dt><dd id="result-strength"></dd></div>
+            <div><dt>趣味彩蛋</dt><dd id="result-egg"></dd></div>
+          </dl>
+          <div class="result-actions">
+            <button class="button primary" id="save-poster" type="button">保存分享卡</button>
+            <button class="button secondary" id="retake" type="button">重新测试</button>
+          </div>
+          <p class="notice" id="save-status" aria-live="polite"></p>
+        </div>
+      </section>
+      <noscript><p class="notice">请在支持 JavaScript 的浏览器中打开网页，并启用 JavaScript 后开始测试。</p></noscript>
+    </main>
+
+    <footer class="site-footer wrap">
+      <p>趣味测试 · 人物解读为创意演绎，仅供娱乐</p>
+    </footer>
+  </div>
+
+  <dialog id="about" aria-labelledby="about-title">
+    <form method="dialog">
+      <h2 id="about-title">关于这份测试</h2>
+      <p>40 道题覆盖日常习惯、处事方式、社交模式、情绪反应和兴趣偏好。每道题选最接近你平时做法的一项即可。</p>
+      <p>系统按八项性格倾向累计选择，再对照人物原型的核心与辅助特质匹配结果。人物解读为创意演绎，供娱乐使用。答案仅用于当前页面的本地计算。</p>
+      <button class="button primary" type="submit" autofocus>知道了</button>
+    </form>
+  </dialog>
+  <dialog id="poster-preview" class="image-dialog" aria-label="分享卡图片">
+    <form method="dialog">
+      <p>下载 PNG，或长按图片保存</p>
+      <img id="preview-image" alt="你的历史人物分享卡">
+      <div class="preview-actions">
+        <a class="button primary" id="poster-download" download>下载 PNG</a>
+        <button class="button secondary" type="submit" autofocus>关闭</button>
+      </div>
+    </form>
+  </dialog>
+  <script src="questions.js"></script>
+  <script src="profiles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
