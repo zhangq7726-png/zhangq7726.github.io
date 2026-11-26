@@ -187,7 +187,7 @@ async function buildPoster(profile) {
   context.strokeRect(47, 47, width - 94, height - 94);
   context.fillStyle = '#564c3d';
   context.font = '30px ' + sans;
-  context.fillText('灵魂人物志', 91, 119);
+  context.fillText('脑洞星球', 91, 119);
   context.textAlign = 'right';
   context.fillText('我的测试结果', width - 91, 119);
   context.strokeStyle = '#c6b59a';
@@ -293,7 +293,7 @@ get('save-poster').addEventListener('click', async () => {
     posterUrl = URL.createObjectURL(blob);
     get('preview-image').src = posterUrl;
     get('poster-download').href = posterUrl;
-    get('poster-download').download = '灵魂人物志-' + profile.name + '.png';
+    get('poster-download').download = '脑洞星球-' + profile.name + '.png';
     preview.showModal();
     status.textContent = '';
   } catch {
