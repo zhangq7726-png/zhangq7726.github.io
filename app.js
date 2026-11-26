@@ -239,7 +239,7 @@ async function buildPoster(profile) {
   context.fillStyle = '#463f33';
   context.textAlign = 'center';
   context.font = '30px ' + sans;
-  context.fillText('测测你的灵魂对应哪位中国历史人物', width / 2, 1359);
+  context.fillText('脑洞星球 · 发现有趣的自己', width / 2, 1359);
 
   return new Promise((resolve, reject) => {
     canvas.toBlob((blob) => {
