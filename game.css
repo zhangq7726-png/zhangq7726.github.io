@@ -36,8 +36,11 @@ button:focus-visible, a:focus-visible { outline: 3px solid #bd8c54; outline-offs
   justify-content: space-between;
   border-bottom: 1px solid var(--line);
 }
-.brand { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; font: 700 1.05rem var(--serif); letter-spacing: .12em; }
-.brand-mark { display: grid; place-items: center; width: 33px; height: 35px; color: #fff8ed; background: var(--red); outline: 1px solid #e4b8a3; outline-offset: -4px; }
+.brand { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; font: 700 1.05rem var(--serif); letter-spacing: .06em; }
+.brand-copy { display: grid; gap: 1px; text-align: left; line-height: 1.15; }
+.brand-name { font: 700 1.02rem/1.2 var(--serif); letter-spacing: .08em; }
+.brand-subtitle { color: var(--muted); font: 700 .5rem/1.2 var(--sans); letter-spacing: .2em; }
+.brand-mark { display: grid; place-items: center; width: 38px; height: 38px; color: #fff; background: linear-gradient(145deg, #6656e8, #b36be8); border: 1px solid #8069e8; border-radius: 11px; outline: 1px solid #d8c9ff; outline-offset: -4px; font-size: 1.35rem; box-shadow: 0 5px 14px #7761d52b; }
 .back-link { color: var(--muted); text-decoration: none; font-size: .9rem; }
 .back-link:hover { color: var(--red); }
 .game-main { flex: 1; display: grid; align-items: center; padding-block: 36px 52px; }
@@ -135,6 +138,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #bd8c54; outline-offs
 @media (max-width: 520px) {
   .game-header { min-height: 64px; }
   .brand { font-size: .92rem; }
+  .brand-name { font-size: .92rem; }
   .back-link { font-size: .8rem; }
   .mode-actions { display: grid; grid-template-columns: 1fr; margin-top: 23px; }
   .mode-actions .button { width: 100%; }

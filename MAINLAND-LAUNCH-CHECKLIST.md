@@ -1,4 +1,4 @@
-# Mainland China launch checklist
+# 脑洞星球 · Mainland China launch checklist
 
 ## Current state
 
