@@ -1,0 +1,34 @@
+name: Mini game quality checks
+
+on:
+  push:
+    branches:
+      - main
+      - feature/mini-game-mvp
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check JavaScript syntax
+        run: |
+          node --check app.js
+          node --check questions.js
+          node --check profiles.js
+          node --check game-data.js
+          node --check game.js
+      - name: Validate mini game content and page references
+        run: node scripts/validate-game.js
