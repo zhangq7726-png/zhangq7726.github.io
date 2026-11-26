@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "template": "collector",
+  "title": "霓虹疾驰",
+  "slots": {
+    "hero": {
+      "file": "assets/hero.svg",
+      "label": "霓虹跑车",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true
+    },
+    "enemy": {
+      "file": "assets/enemy.svg",
+      "label": "公路车辆",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true
+    },
+    "pickup": {
+      "file": "assets/pickup.svg",
+      "label": "金币",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true
+    }
+  },
+  "rules": {
+    "duration": 0,
+    "hearts": 3,
+    "baseSpeed": 165,
+    "maxSpeed": 295
+  },
+  "style": "午夜霓虹高速公路，青蓝与珊瑚红，精致街机赛车",
+  "orientation": "portrait"
+}
