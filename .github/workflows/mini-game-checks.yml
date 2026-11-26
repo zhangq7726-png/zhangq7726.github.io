@@ -32,3 +32,5 @@ jobs:
           node --check game.js
       - name: Validate mini game content and page references
         run: node scripts/validate-game.js
+      - name: Validate portal pages and local links
+        run: node scripts/validate-site.js
