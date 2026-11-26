@@ -151,3 +151,10 @@ button:focus-visible, a:focus-visible { outline: 3px solid #bd8c54; outline-offs
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+.policy-screen { width: min(760px, 100%); margin-inline: auto; padding: clamp(22px, 4vw, 42px); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.policy-screen h1 { margin: 0 0 8px; font: 700 clamp(2.3rem, 5vw, 3.5rem)/1.25 var(--serif); }
+.policy-screen h2 { margin: 25px 0 7px; font: 700 1.18rem var(--serif); }
+.policy-screen p { margin: 10px 0; color: #55564d; line-height: 1.9; }
+.policy-screen a { color: var(--red); }
+.policy-updated { font-size: .82rem; color: var(--muted) !important; }
+.policy-footnote { margin-top: 28px !important; padding-top: 15px; border-top: 1px solid var(--line); font-size: .82rem; }
