@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3eb">
+  <meta name="description" content="限时挑战历史人物快猜，读线索、抢时间、刷新你的本机纪录。">
+  <title>历史人物快猜 - 灵魂人物志</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-header">
+      <a class="brand" href="index.html"><span class="brand-mark">山</span><span>灵魂人物志</span></a>
+      <a class="back-link" href="index.html">返回人格测试 <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="game-main">
+      <section class="screen home-screen" id="screen-home" aria-labelledby="home-title">
+        <div class="hero-copy">
+          <p class="eyebrow">DAILY HISTORY CHALLENGE</p>
+          <h1 id="home-title">读懂线索，<br><em>猜中历史人物。</em></h1>
+          <p class="hero-intro">十道快问快答，看看你的历史直觉有多准。答得越快，分数越高。</p>
+          <div class="mode-actions">
+            <button class="button primary-button" id="start-daily" type="button">开始今日挑战 <span aria-hidden="true">→</span></button>
+            <button class="button secondary-button" id="start-practice" type="button">自由练习</button>
+          </div>
+          <p class="micro-copy">每局 10 题 · 每题 18 秒 · 提示会扣除 20 分</p>
+        </div>
+
+        <aside class="record-panel" aria-label="本机挑战纪录">
+          <div class="record-heading">
+            <span class="record-icon" aria-hidden="true">卷</span>
+            <div><p class="eyebrow">YOUR RECORD</p><h2>你的挑战档案</h2></div>
+          </div>
+          <div class="record-grid">
+            <div><strong id="best-score">0</strong><span>本机最高分</span></div>
+            <div><strong id="daily-score">未挑战</strong><span>今日最佳</span></div>
+            <div><strong id="streak-count">0 天</strong><span>连续挑战</span></div>
+          </div>
+          <div class="record-note">
+            <span class="dot"></span>
+            <p>纪录保存在当前浏览器。换设备或清理浏览器数据后，纪录不会自动同步。</p>
+          </div>
+          <div class="rules">
+            <h3>怎么玩</h3>
+            <ol>
+              <li>阅读人物线索，选择你认为正确的答案。</li>
+              <li>答对获得基础分和剩余时间奖励。</li>
+              <li>卡住时可以查看提示，但会扣分。</li>
+            </ol>
+          </div>
+        </aside>
+      </section>
+
+      <section class="screen play-screen" id="screen-play" hidden aria-labelledby="question-title">
+        <div class="play-heading">
+          <div><p class="eyebrow" id="mode-label">TODAY'S CHALLENGE</p><h1>人物快猜</h1></div>
+          <button class="text-button" id="quit-button" type="button">退出本局</button>
+        </div>
+        <div class="play-stats">
+          <div><span>题目</span><strong id="round-label">1 / 10</strong></div>
+          <div><span>当前得分</span><strong id="score-value">0</strong></div>
+          <div class="timer-stat"><span>剩余时间</span><strong id="timer-value">18</strong></div>
+        </div>
+        <div class="progress-track" aria-label="答题进度"><div class="progress-fill" id="progress-fill"></div></div>
+
+        <article class="question-card">
+          <div class="question-kicker"><span>CLUE</span><span id="question-number">NO. 01</span></div>
+          <h2 id="question-title">根据线索，猜猜这位历史人物是谁？</h2>
+          <p class="clue-text" id="clue-text"></p>
+          <button class="hint-button" id="hint-button" type="button">查看提示 <span>−20 分</span></button>
+          <p class="hint-text" id="hint-text" hidden></p>
+          <div class="answer-grid" id="answer-options" aria-label="选择答案"></div>
+
+          <div class="feedback-panel" id="feedback-panel" hidden aria-live="polite">
+            <strong id="feedback-title"></strong>
+            <p id="feedback-detail"></p>
+            <button class="button primary-button next-button" id="next-button" type="button">下一题</button>
+          </div>
+        </article>
+        <p class="play-footnote">答题结果仅用于本局趣味挑战，不代表历史知识水平测评。</p>
+      </section>
+
+      <section class="screen result-screen" id="screen-result" hidden aria-labelledby="result-title">
+        <p class="eyebrow">CHALLENGE COMPLETE</p>
+        <h1 id="result-title">这一卷，你答得不错。</h1>
+        <p class="result-subtitle" id="result-subtitle"></p>
+        <div class="score-card">
+          <span>本局得分</span>
+          <strong id="final-score">0</strong>
+          <em id="rank-label">线索猎手</em>
+        </div>
+        <div class="result-stats">
+          <div><strong id="correct-count">0 / 10</strong><span>答对题数</span></div>
+          <div><strong id="accuracy-rate">0%</strong><span>正确率</span></div>
+          <div><strong id="best-result">0</strong><span>本机最高分</span></div>
+        </div>
+        <div class="result-actions">
+          <button class="button primary-button" id="share-button" type="button">分享成绩</button>
+          <button class="button secondary-button" id="replay-button" type="button">再玩一局</button>
+          <button class="button text-button" id="home-button" type="button">返回首页</button>
+        </div>
+        <p class="share-status" id="share-status" aria-live="polite"></p>
+        <p class="result-disclaimer">当前为免费体验版。成绩保存在本机，暂不包含跨设备排行榜、广告或付费功能。</p>
+      </section>
+    </main>
+
+    <footer class="game-footer">
+      <span>灵魂人物志 · 历史人物快猜</span>
+      <span>趣味挑战，不构成正式历史测评</span>
+    </footer>
+  </div>
+  <script src="game-data.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
