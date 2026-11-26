@@ -3,123 +3,104 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f3eb">
-  <meta name="description" content="从 40 个日常选择里，找出与你性情相近的中国历史人物。">
-  <title>脑洞星球｜历史人物人格测试</title>
+  <meta name="theme-color" content="#f6f4ff">
+  <meta name="description" content="脑洞星球 BRAINVERSE，一个轻松有趣的小游戏空间。来挑战历史人物快猜，或发现与你相似的历史人物。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="脑洞星球 BRAINVERSE">
+  <meta property="og:description" content="发现有趣的自己，玩出不一样的脑洞。">
+  <title>脑洞星球 BRAINVERSE｜发现有趣的自己</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portal.css">
 </head>
 <body>
-  <div class="site">
-    <header class="site-header wrap">
-      <button class="brand" type="button" id="brand" aria-label="脑洞星球，返回首页">
+  <div class="portal-shell">
+    <header class="portal-header wrap">
+      <a class="brand" href="index.html" aria-label="脑洞星球首页">
         <span class="brand-mark" aria-hidden="true">✦</span>
-        <span class="brand-copy"><span class="brand-name">脑洞星球</span><small class="brand-subtitle">BRAINVERSE</small></span>
-      </button>
-      <nav class="header-actions" aria-label="更多玩法">
-        <a class="text-button game-link" href="game.html">历史人物快猜</a>
-        <button class="text-button about-button" type="button" id="about-open">关于测试</button>
+        <span class="brand-copy"><strong>脑洞星球</strong><small>BRAINVERSE</small></span>
+      </a>
+      <nav class="main-nav" aria-label="网站导航">
+        <a href="#games">探索玩法</a>
+        <a class="nav-cta" href="game.html">今日挑战 <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
 
-    <main class="wrap">
-      <section class="home enter" id="home" aria-labelledby="home-title">
-        <div class="home-copy">
-          <p class="eyebrow">趣味人格测试</p>
-          <h1 id="home-title" tabindex="-1">测测你的灵魂<br>对应哪位<br><em>中国历史人物</em><span class="title-stop" aria-hidden="true">？</span></h1>
-          <p class="intro">如果把你的日常写成一卷人物小传，谁会是那个与你最有几分相像的人？</p>
-          <button class="button primary start-button" type="button" id="start">开始测试</button>
-          <div class="test-facts" aria-label="测试规格">
-            <span>40 道单选</span><span>约 5–8 分钟</span><span>8 种人物结果</span>
+    <main>
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR LITTLE PLAYGROUND</p>
+          <h1 id="hero-title">脑洞打开，<br><em>好玩就现在。</em></h1>
+          <p class="hero-intro">这里没有标准答案，只有一点好奇心和许多有趣的可能。来做个测试，或挑战一轮快问快答，发现不一样的自己。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="game.html">开始今日挑战 <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="personality.html">测测我的历史人格</a>
+          </div>
+          <div class="hero-facts" aria-label="平台特点">
+            <span><b>✦</b> 免费体验</span>
+            <span><b>✦</b> 手机电脑都能玩</span>
+            <span><b>✦</b> 无需注册</span>
           </div>
         </div>
-        <figure class="hero-art">
-          <div class="art-mount">
-            <img class="art-image" id="landscape" src="landscape.webp" width="880" height="1100" alt="朱红日轮下的水墨群山和立于崖边的行人" decoding="async">
-            <span class="art-border" aria-hidden="true"></span>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="planet">
+            <span class="planet-spark spark-one">✦</span>
+            <span class="planet-spark spark-two">✧</span>
+            <span class="planet-core">脑洞<br>+1</span>
           </div>
-        </figure>
-      </section>
-
-      <section class="quiz" id="quiz" aria-labelledby="question-title" hidden>
-        <div class="progress-area">
-          <div class="progress-caption">
-            <span class="topic" id="topic"></span>
-            <span class="progress-text" id="progress-text"></span>
-          </div>
-          <progress id="progress" aria-label="答题进度" max="40" value="0"></progress>
-        </div>
-        <div class="question-card" id="question-card">
-          <p class="question-count" id="question-count"></p>
-          <h1 id="question-title" tabindex="-1"></h1>
-          <fieldset class="options" id="options" aria-labelledby="question-title"></fieldset>
-        </div>
-        <div class="quiz-actions">
-          <button class="button secondary" id="previous" type="button">上一题</button>
-          <button class="button primary" id="next" type="button" disabled>下一题</button>
+          <span class="float-note note-one">今天也要好奇 ♡</span>
+          <span class="float-note note-two">PLAY · THINK · SMILE</span>
+          <span class="tiny-star star-one">✦</span>
+          <span class="tiny-star star-two">✧</span>
         </div>
       </section>
 
-      <section class="result" id="result" aria-labelledby="result-title" hidden>
-        <article class="share-card" id="share-card" aria-label="可截图分享的人物卡">
-          <div class="share-frame">
-            <header class="share-head"><span>脑洞星球</span><span>我的测试结果</span></header>
-            <div class="poster-body">
-              <p class="poster-label">我的灵魂对应</p>
-              <h1 id="result-title" tabindex="-1"></h1>
-              <p class="poster-role" id="result-role"></p>
-              <span class="result-seal" id="result-seal" aria-hidden="true"></span>
+      <section class="games-section wrap" id="games" aria-labelledby="games-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">CHOOSE YOUR PLAY</p>
+            <h2 id="games-title">今天，想玩点什么？</h2>
+          </div>
+          <p>几分钟的轻松体验，给日常加一点新鲜感。</p>
+        </div>
+
+        <div class="game-grid">
+          <a class="game-card card-quiz" href="game.html">
+            <div class="card-top">
+              <span class="game-icon" aria-hidden="true">⚡</span>
+              <span class="card-pill">每日挑战</span>
             </div>
-            <p class="poster-quote" id="result-quote"></p>
-            <ul class="tag-list" id="poster-tags" aria-label="人物特质"></ul>
-            <div class="poster-landscape" aria-hidden="true"></div>
-            <footer class="share-foot"><span>测测你的灵魂对应哪位中国历史人物</span></footer>
-          </div>
-        </article>
-        <div class="result-details">
-          <p class="eyebrow">人物解读</p>
-          <h2>你们有哪些相似之处？</h2>
-          <dl class="reading">
-            <div><dt>性格特点</dt><dd><ul class="tag-list" id="result-tags"></ul></dd></div>
-            <div><dt>匹配理由</dt><dd id="result-reason"></dd></div>
-            <div><dt>隐藏优势</dt><dd id="result-strength"></dd></div>
-            <div><dt>趣味彩蛋</dt><dd id="result-egg"></dd></div>
-          </dl>
-          <div class="result-actions">
-            <button class="button primary" id="save-poster" type="button">保存分享卡</button>
-            <button class="button secondary" id="retake" type="button">重新测试</button>
-          </div>
-          <p class="notice" id="save-status" aria-live="polite"></p>
+            <h3>历史人物快猜</h3>
+            <p>读线索、抢时间，看看你的历史直觉能拿多少分。还可以自由练习，刷新本机纪录。</p>
+            <div class="card-meta"><span>10 道题</span><span>每题 18 秒</span><span>可自由练习</span></div>
+            <div class="card-link">开始挑战 <span aria-hidden="true">↗</span></div>
+          </a>
+
+          <a class="game-card card-personality" href="personality.html">
+            <div class="card-top">
+              <span class="game-icon" aria-hidden="true">✺</span>
+              <span class="card-pill">趣味测试</span>
+            </div>
+            <h3>历史人物人格测试</h3>
+            <p>从 40 个生活选择出发，找到与你性格气质相近的历史人物，看看你们有哪些相似之处。</p>
+            <div class="card-meta"><span>40 道单选</span><span>约 5–8 分钟</span><span>8 种人物原型</span></div>
+            <div class="card-link">开始测试 <span aria-hidden="true">↗</span></div>
+          </a>
         </div>
       </section>
-      <noscript><p class="notice">请在支持 JavaScript 的浏览器中打开网页，并启用 JavaScript 后开始测试。</p></noscript>
+
+      <section class="bottom-note wrap">
+        <span class="note-icon" aria-hidden="true">✦</span>
+        <p><strong>星球还在扩建中。</strong> 我们会慢慢加入更多轻松、有趣、值得分享的新玩法。</p>
+      </section>
     </main>
 
-    <footer class="site-footer wrap">
-      <p>脑洞星球 · 趣味测试 · 人物解读为创意演绎，仅供娱乐</p>
+    <footer class="portal-footer wrap">
+      <span>© 2026 脑洞星球 BRAINVERSE</span>
+      <span>趣味内容，仅供娱乐</span>
+      <a href="privacy.html">隐私说明</a>
     </footer>
   </div>
-
-  <dialog id="about" aria-labelledby="about-title">
-    <form method="dialog">
-      <h2 id="about-title">关于这份测试</h2>
-      <p>40 道题覆盖日常习惯、处事方式、社交模式、情绪反应和兴趣偏好。每道题选最接近你平时做法的一项即可。</p>
-      <p>系统按八项性格倾向累计选择，再对照人物原型的核心与辅助特质匹配结果。人物解读为创意演绎，供娱乐使用。答案仅用于当前页面的本地计算。</p>
-      <button class="button primary" type="submit" autofocus>知道了</button>
-    </form>
-  </dialog>
-  <dialog id="poster-preview" class="image-dialog" aria-label="分享卡图片">
-    <form method="dialog">
-      <p>下载 PNG，或长按图片保存</p>
-      <img id="preview-image" alt="你的历史人物分享卡">
-      <div class="preview-actions">
-        <a class="button primary" id="poster-download" download>下载 PNG</a>
-        <button class="button secondary" type="submit" autofocus>关闭</button>
-      </div>
-    </form>
-  </dialog>
-  <script src="questions.js"></script>
-  <script src="profiles.js"></script>
-  <script src="app.js"></script>
 </body>
 </html>
