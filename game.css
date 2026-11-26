@@ -5,9 +5,9 @@
   --ink: #242923;
   --muted: #6a6b61;
   --line: #ded5c7;
-  --red: #922e26;
-  --red-dark: #72221b;
-  --gold: #b28a4c;
+  --red: #7561df;
+  --red-dark: #5e4bc5;
+  --gold: #9c87e8;
   --serif: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif;
   --sans: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
 }
@@ -26,7 +26,7 @@ body {
 }
 button, a { font: inherit; }
 button { cursor: pointer; }
-button:focus-visible, a:focus-visible { outline: 3px solid #bd8c54; outline-offset: 3px; }
+button:focus-visible, a:focus-visible { outline: 3px solid #9b88ed; outline-offset: 3px; }
 .game-shell { min-height: 100vh; display: flex; flex-direction: column; }
 .game-header, .game-main, .game-footer { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
 .game-header {
